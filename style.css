@@ -1,118 +1,245 @@
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 
 body{
 
-margin:0;
+    margin:0;
+    background:#000;
+    color:white;
+    text-align:center;
 
-background:#050505;
+}
 
-color:white;
 
-font-family:Arial;
+.app{
 
-text-align:center;
+    min-height:100vh;
+    padding:20px;
+    padding-bottom:100px;
 
 }
 
 
 
-.container{
+/* TOP BALANCE */
 
-padding:20px;
+.balance-box{
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:20px;
+
+}
+
+
+.balance-item{
+
+    font-size:24px;
+    font-weight:bold;
+
+}
+
+
+.balance-item h2{
+
+    margin:8px;
+    font-size:40px;
 
 }
 
 
 
-.balance{
+/* PAGE */
 
-display:flex;
+.page{
 
-justify-content:space-around;
+    display:none;
 
-font-size:25px;
+}
 
-font-weight:bold;
 
-margin-top:20px;
+.page.active{
+
+    display:block;
 
 }
 
 
 
-.balance span{
+/* BIG COIN */
 
-font-size:38px;
+
+.big-coin{
+
+    margin-top:80px;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    border:8px solid #ffd700;
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #fff47a,
+    #ffd000,
+    #ff9800);
+
+
+    color:white;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    box-shadow:
+
+    0 0 25px #ffd700,
+    inset 0 0 30px white;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.big-coin:active{
+
+    transform:scale(0.95);
 
 }
 
 
 
-.coin-btn{
-
-margin-top:120px;
-
-width:300px;
-
-height:300px;
-
-border-radius:50%;
-
-border:8px solid gold;
+/* CARD */
 
 
-background:
-radial-gradient(circle,#fff27a,#ffb300,#ff8800);
+.card{
 
+    background:#151515;
 
-color:white;
+    margin:20px;
 
-font-size:32px;
+    padding:20px;
 
-font-weight:bold;
+    border-radius:20px;
 
-
-box-shadow:
-0 0 40px gold,
-inset 0 0 30px white;
-
+    font-size:20px;
 
 }
 
 
 
-.coin-btn:active{
+/* PROGRESS */
 
-transform:scale(.9);
+
+.progress{
+
+    height:20px;
+
+    background:#333;
+
+    border-radius:20px;
+
+    margin:20px;
 
 }
 
+
+#progressBar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#ffd700;
+
+    border-radius:20px;
+
+}
+
+
+
+/* TIMER */
+
+
+.timer{
+
+    margin:30px;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* BUTTON */
+
+
+button{
+
+    background:#222;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 25px;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    margin:8px;
+
+}
+
+
+
+button:hover{
+
+    background:#333;
+
+}
+
+
+
+
+
+/* BOTTOM MENU */
 
 
 .menu{
 
-position:fixed;
 
-bottom:0;
+    position:fixed;
 
-left:0;
+    bottom:0;
 
-width:100%;
+    left:0;
 
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
+    width:100%;
 
 
-background:#151515;
+    background:#151515;
 
-padding:15px;
+    display:flex;
+
+    justify-content:space-around;
+
+    padding:12px 5px;
 
 
-border-radius:30px 30px 0 0;
+    border-radius:25px 25px 0 0;
 
 
 }
@@ -121,57 +248,36 @@ border-radius:30px 30px 0 0;
 
 .menu button{
 
-background:none;
 
-border:none;
+    background:none;
 
-color:white;
+    font-size:16px;
 
-font-size:16px;
-
-font-weight:bold;
+    padding:10px;
 
 }
 
 
 
-.page{
 
-display:none;
-
-margin-top:50px;
-
-}
+/* PROFILE */
 
 
+#profilePage button{
 
-.page.active{
-
-display:block;
+    width:40%;
 
 }
 
 
 
-.card{
-
-background:#222;
-
-padding:20px;
-
-margin:15px;
-
-border-radius:20px;
-
-}
+/* TASK */
 
 
-.card button{
+#taskPage h2,
+#rankPage h2,
+#profilePage h2{
 
-padding:10px 30px;
-
-border-radius:20px;
-
-border:none;
+    font-size:35px;
 
     }
