@@ -1,14 +1,75 @@
-let fox = 0;
-let dollar = 0;
+let fox = Number(localStorage.getItem("fox")) || 0;
 
-const coin = document.querySelector(".coin-btn");
 
-coin.addEventListener("click", function () {
+// Tap Function
 
-    fox += 1;
-    dollar = fox * 0.01;
+function tapFox(){
 
-    document.querySelector(".fox-count").innerHTML = fox;
-    document.querySelector(".dollar-count").innerHTML = "$" + dollar.toFixed(2);
+    fox = fox + 1;
 
-});
+    saveData();
+
+    updateBalance();
+
+}
+
+
+
+// Dollar Calculation
+
+function calculateDollar(){
+
+    return (fox / 300000) * 20;
+
+}
+
+
+
+// Save
+
+function saveData(){
+
+    localStorage.setItem("fox", fox);
+
+}
+
+
+
+// Update Screen
+
+function updateBalance(){
+
+    let dollar = calculateDollar();
+
+    document.getElementById("foxBalance").innerHTML = fox;
+
+    document.getElementById("dollarBalance").innerHTML =
+    dollar.toFixed(2);
+
+}
+
+
+
+// Page Navigation
+
+function showPage(page){
+
+    let pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+
+    document.getElementById(page)
+    .classList.add("active");
+
+}
+
+
+
+// Start
+
+updateBalance();
