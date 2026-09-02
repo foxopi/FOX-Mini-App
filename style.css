@@ -5,76 +5,222 @@
 
 body{
     margin:0;
-    background:#111;
+    padding:0;
+    background:#0f0f0f;
     color:white;
+}
+
+
+.container{
+    width:100%;
+    max-width:450px;
+    margin:auto;
+    padding:20px;
     text-align:center;
 }
 
-.container{
-    padding:20px;
-}
 
 .logo{
-    font-size:60px;
+    font-size:70px;
     margin-top:20px;
 }
 
+
 h1{
-    font-size:28px;
+    font-size:32px;
+    margin:5px;
 }
+
 
 .balance{
     display:flex;
-    justify-content:space-around;
-    margin:30px 0;
+    justify-content:space-between;
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:20px;
+    margin:25px 0;
     font-size:20px;
 }
 
+
+.balance div{
+    width:50%;
+}
+
+
 .coin-btn{
-    width:180px;
-    height:180px;
+
+    width:220px;
+    height:220px;
+
     border-radius:50%;
     border:none;
-    background:#ff9800;
+
+    background:linear-gradient(
+        145deg,
+        #ffb300,
+        #ff6f00
+    );
+
     color:white;
-    font-size:25px;
+
+    font-size:30px;
     font-weight:bold;
-    cursor:pointer;
+
+    box-shadow:
+    0 0 25px #ff9800;
+
 }
+
 
 .coin-btn:active{
-    transform:scale(0.95);
+
+    transform:scale(0.92);
+
 }
+
 
 .menu{
+
     margin-top:40px;
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:10px;
+
+    gap:15px;
+
 }
+
+
 
 .menu button{
-    padding:15px;
-    border-radius:15px;
+
+    background:#222;
+
+    color:white;
+
     border:none;
+
+    padding:18px;
+
+    border-radius:18px;
+
     font-size:18px;
+
 }
+
+
+
+.menu button:hover{
+
+    background:#ff9800;
+
+}
+
+
 
 .page{
+
     display:none;
+
+    background:#1c1c1c;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    border-radius:20px;
+
 }
+
 
 .active{
+
     display:block;
+
 }
+
+
 
 .card{
-    background:#222;
-    padding:20px;
-    margin:15px;
+
+    background:#252525;
+
+    padding:15px;
+
     border-radius:15px;
+
+    margin:10px 0;
+
 }
 
-button{
-    cursor:pointer;
+
+
+.progress{
+
+    background:#333;
+
+    height:20px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-bar{
+
+    height:100%;
+
+    background:#ff9800;
+
+    width:0%;
+
+}
+
+
+
+.action-btn{
+
+    background:#ff9800;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+}
+
+
+
+.timer{
+
+    font-size:25px;
+
+    margin:20px;
+
+    color:#ff9800;
+
+}
+
+
+
+.wallet{
+
+    background:#222;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    word-break:break-all;
+
 }
