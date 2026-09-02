@@ -3,7 +3,7 @@
 
 <head>
 
-<title>FOX Mini App</title>
+<title>Foxopi</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,203 +15,296 @@
 <body>
 
 
-<div class="container">
+<div class="app">
 
 
-<div class="balance">
+<!-- TOP BALANCE -->
 
-<div>
+<div class="balance-box">
+
+
+<div class="balance-item">
+
 🪙 Coin
-<br>
-<span id="foxBalance">0</span>
-</div>
 
-
-<div>
-💵 Dollar
-<br>
-$<span id="dollarBalance">0</span>
-</div>
-
+<h2 id="coinBalance">
+0
+</h2>
 
 </div>
 
 
 
-<button class="coin-btn" onclick="tapFox()">
+<div class="balance-item">
+
+💵 Balance
+
+<h2 id="dollarBalance">
+$0
+</h2>
+
+</div>
+
+
+</div>
+
+
+
+<!-- EARN PAGE -->
+
+<div id="earnPage" class="page active">
+
+
+<button class="big-coin" onclick="tapCoin()">
 
 🪙
+
 <br>
+
 Tap Coin
 
 </button>
 
 
+</div>
 
 
-<div class="pages">
 
 
-<div id="home" class="page active">
 
-<h2>FOX</h2>
+<!-- TASK PAGE -->
+
+<div id="taskPage" class="page">
+
+
+<h2>
+🎯 Task
+</h2>
+
+
+<div class="card">
+
+
+<h3>
+Invite Friend
+</h3>
+
 
 <p>
-Tap coin and earn rewards
+1 Friend Invite
 </p>
+
+<p>
+2 Friend Invite
+</p>
+
+<p>
+3 Friend Invite
+</p>
+
+<p>
+........</p>
+
+
+<p>
+10 Friend Invite
+</p>
+
 
 </div>
 
 
 
-<div id="earn" class="page">
+<div class="progress">
 
-<h2>💰 Earn</h2>
+<div id="progressBar">
 
-<div class="card">
+</div>
 
-<h3>Daily Reward</h3>
+</div>
 
-<p>Collect your daily bonus</p>
+
+
+<h3 id="progressText">
+0%
+</h3>
+
+
 
 <button>
-Claim
+
+💵 $150 Claim
+
 </button>
 
+
+
 </div>
+
+
+
+
+
+
+
+<!-- RANK PAGE -->
+
+
+<div id="rankPage" class="page">
+
+
+<h2>
+🏆 Rank
+</h2>
+
+
+
+<div class="timer">
+
+50 : 24 : 60 : 60
+
+</div>
+
+
+
+<p>
+Days &nbsp; Hours &nbsp; Minute &nbsp; Second
+</p>
+
 
 
 <div class="card">
 
-<h3>Tap Power</h3>
+
+<h3>
+Leaderboard
+</h3>
+
 
 <p>
-1 Tap = 1 FOX
+1. User
 </p>
 
-</div>
+<p>
+2. User
+</p>
+
+<p>
+3. User
+</p>
+
+<p>
+.....</p>
+
+<p>
+10. User
+</p>
 
 
 </div>
 
 
+</div>
 
 
 
-<div id="missions" class="page">
 
-<h2>🎯 Missions</h2>
+
+
+
+<!-- PROFILE PAGE -->
+
+
+<div id="profilePage" class="page">
+
+
+<h2>
+👤 Profile
+</h2>
+
 
 
 <div class="card">
 
-<h3>Invite Friends</h3>
 
-<p>
-Earn bonus by inviting users
-</p>
-
-</div>
+<h3>
+💵 Dollar Balance
+</h3>
 
 
-<div class="card">
-
-<h3>Social Task</h3>
-
-<p>
-Complete tasks and get rewards
-</p>
-
-</div>
+<h3>
+🪙 Coin Balance
+</h3>
 
 
 </div>
 
 
 
+<button>
+Deposit
+</button>
 
 
-<div id="rank" class="page">
-
-<h2>🏆 Rank</h2>
-
-
-<div class="card">
-
-<h3>Leaderboard</h3>
-
-<p>🥇 Player 1 - 10000 FOX</p>
-
-<p>🥈 Player 2 - 8000 FOX</p>
-
-<p>🥉 Player 3 - 5000 FOX</p>
+<button>
+Withdraw
+</button>
 
 
-</div>
+<br><br>
 
 
-</div>
+<button>
+Add Wallet
+</button>
 
-
-
-
-
-<div id="profile" class="page">
-
-<h2>👤 Profile</h2>
-
-
-<div class="card">
-
-<p>
-Username: FOX User
-</p>
 
 
 <p>
-User ID: 00001
+Admin @foxopi
 </p>
 
 
-<p>
-Total FOX:
-<span id="profileCoin">0</span>
-</p>
-
-
-</div>
-
 
 </div>
 
 
 
-</div>
 
 
 
+
+<!-- BOTTOM MENU -->
 
 
 <div class="menu">
 
 
-<button onclick="showPage('earn')">
+<button onclick="openPage('earnPage')">
+
 💰 Earn
+
 </button>
 
 
-<button onclick="showPage('missions')">
-🎯 Missions
+<button onclick="openPage('taskPage')">
+
+🎯 Task
+
 </button>
 
 
-<button onclick="showPage('rank')">
+<button onclick="openPage('rankPage')">
+
 🏆 Rank
+
 </button>
 
 
-<button onclick="showPage('profile')">
+<button onclick="openPage('profilePage')">
+
 👤 Profile
+
 </button>
 
 
@@ -220,6 +313,7 @@ Total FOX:
 
 
 </div>
+
 
 
 <script src="script.js"></script>
