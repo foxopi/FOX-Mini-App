@@ -1,168 +1,116 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>FOX Earn</title>
+<title>FOX Mini App</title>
 
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-    background:#111;
-    color:white;
-    text-align:center;
-    font-family:Arial;
-}
-
-
-.logo{
-    font-size:60px;
-    margin-top:20px;
-}
-
-
-.balance{
-    display:flex;
-    justify-content:space-around;
-    margin:30px;
-    font-size:20px;
-}
-
-
-.coin{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    background:#ff9800;
-    border:none;
-    font-size:28px;
-    font-weight:bold;
-}
-
-
-.coin:active{
-    transform:scale(0.95);
-}
-
-
-.menu{
-    margin-top:50px;
-}
-
-
-.menu button{
-
-    width:45%;
-    padding:15px;
-    margin:5px;
-
-    border-radius:15px;
-    border:none;
-
-    font-size:18px;
-
-}
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<div class="container">
 
-<div class="logo">
-🦊
+    <div class="logo">
+        🦊
+    </div>
+
+    <h1>FOX</h1>
+
+    <div class="balance">
+
+        <div>
+            🪙 FOX
+            <br>
+            <span id="foxBalance">0</span>
+        </div>
+
+        <div>
+            💵 Dollar
+            <br>
+            $<span id="dollarBalance">0</span>
+        </div>
+
+    </div>
+
+
+    <button class="coin-btn" onclick="tapFox()">
+        FOX<br>
+        Tap Here
+    </button>
+
+
+    <div class="menu">
+
+        <button onclick="showPage('earn')">
+            💰 Earn
+        </button>
+
+        <button onclick="showPage('missions')">
+            🎯 Missions
+        </button>
+
+        <button onclick="showPage('rank')">
+            🏆 Rank
+        </button>
+
+        <button onclick="showPage('profile')">
+            👤 Profile
+        </button>
+
+    </div>
+
+
+    <div id="earn" class="page">
+
+        <h2>💰 Earn</h2>
+
+        <p>
+        Tap FOX coin and earn rewards
+        </p>
+
+    </div>
+
+
+    <div id="missions" class="page">
+
+        <h2>🎯 Missions</h2>
+
+        <p>
+        Invite friends and complete tasks
+        </p>
+
+    </div>
+
+
+    <div id="rank" class="page">
+
+        <h2>🏆 Rank</h2>
+
+        <p>
+        Your rank will appear here
+        </p>
+
+    </div>
+
+
+    <div id="profile" class="page">
+
+        <h2>👤 Profile</h2>
+
+        <p>
+        User profile coming soon
+        </p>
+
+    </div>
+
+
 </div>
 
 
-<h2>FOX</h2>
-
-
-
-<div class="balance">
-
-<div>
-🪙 FOX<br>
-<span id="fox">0</span>
-</div>
-
-
-<div>
-💵 Dollar<br>
-$<span id="dollar">0</span>
-</div>
-
-
-</div>
-
-
-
-<button class="coin" onclick="tapFox()">
-
-FOX
-<br>
-Tap Here
-
-</button>
-
-
-
-<div class="menu">
-
-<button>
-💰 Earn
-</button>
-
-
-<button>
-🎯 Missions
-</button>
-
-
-<button>
-🏆 Rank
-</button>
-
-
-<button>
-👤 Profile
-</button>
-
-
-</div>
-
-
-
-<script>
-
-
-let fox = 0;
-
-
-function tapFox(){
-
-fox = fox + 1;
-
-
-document.getElementById("fox").innerHTML = fox;
-
-
-// 300000 FOX = $20
-
-let dollar = (fox / 300000) * 20;
-
-
-document.getElementById("dollar").innerHTML =
-dollar.toFixed(4);
-
-
-}
-
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
-
 </html>
