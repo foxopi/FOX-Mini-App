@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>FOX Mini App</title>
+<title>FOX Earn</title>
 
 <style>
+
 body{
     background:#111;
     color:white;
@@ -11,40 +13,56 @@ body{
     font-family:Arial;
 }
 
-h1{
+
+.logo{
     font-size:60px;
-    margin-top:40px;
+    margin-top:20px;
 }
+
 
 .balance{
     display:flex;
     justify-content:space-around;
-    font-size:22px;
     margin:30px;
+    font-size:20px;
 }
 
+
 .coin{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     border-radius:50%;
     background:#ff9800;
     border:none;
-    font-size:30px;
+    font-size:28px;
     font-weight:bold;
 }
+
+
+.coin:active{
+    transform:scale(0.95);
+}
+
 
 .menu{
     margin-top:50px;
 }
 
+
 .menu button{
+
     width:45%;
     padding:15px;
     margin:5px;
+
     border-radius:15px;
     border:none;
+
     font-size:18px;
+
 }
+
+
 </style>
 
 </head>
@@ -52,43 +70,99 @@ h1{
 
 <body>
 
-<h1>🦊</h1>
+
+<div class="logo">
+🦊
+</div>
+
+
 <h2>FOX</h2>
+
 
 
 <div class="balance">
 
 <div>
 🪙 FOX<br>
-0
+<span id="fox">0</span>
 </div>
+
 
 <div>
 💵 Dollar<br>
-$0
+$<span id="dollar">0</span>
 </div>
 
+
 </div>
 
 
-<button class="coin">
-FOX<br>
+
+<button class="coin" onclick="tapFox()">
+
+FOX
+<br>
 Tap Here
+
 </button>
+
 
 
 <div class="menu">
 
-<button>💰 Earn</button>
+<button>
+💰 Earn
+</button>
 
-<button>🎯 Missions</button>
 
-<button>🏆 Rank</button>
+<button>
+🎯 Missions
+</button>
 
-<button>👤 Profile</button>
+
+<button>
+🏆 Rank
+</button>
+
+
+<button>
+👤 Profile
+</button>
+
 
 </div>
 
 
+
+<script>
+
+
+let fox = 0;
+
+
+function tapFox(){
+
+fox = fox + 1;
+
+
+document.getElementById("fox").innerHTML = fox;
+
+
+// 300000 FOX = $20
+
+let dollar = (fox / 300000) * 20;
+
+
+document.getElementById("dollar").innerHTML =
+dollar.toFixed(4);
+
+
+}
+
+
+</script>
+
+
 </body>
+
 </html>
