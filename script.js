@@ -1,75 +1,59 @@
-let fox = Number(localStorage.getItem("fox")) || 0;
+let fox = localStorage.getItem("fox") || 0;
 
 
-// Tap Function
+let dollar = localStorage.getItem("dollar") || 0;
+
+
+
+document.getElementById("foxBalance").innerHTML = fox;
+
+document.getElementById("dollarBalance").innerHTML = dollar;
+
+
+document.getElementById("profileCoin").innerHTML = fox;
+
+
 
 function tapFox(){
 
-    fox = fox + 1;
+fox++;
 
-    saveData();
+dollar = (fox/10000).toFixed(2);
 
-    updateBalance();
+
+
+localStorage.setItem("fox",fox);
+
+localStorage.setItem("dollar",dollar);
+
+
+
+document.getElementById("foxBalance").innerHTML = fox;
+
+document.getElementById("dollarBalance").innerHTML = dollar;
+
+document.getElementById("profileCoin").innerHTML = fox;
+
 
 }
 
 
 
-// Dollar Calculation
-
-function calculateDollar(){
-
-    return (fox / 300000) * 20;
-
-}
-
-
-
-// Save
-
-function saveData(){
-
-    localStorage.setItem("fox", fox);
-
-}
-
-
-
-// Update Screen
-
-function updateBalance(){
-
-    let dollar = calculateDollar();
-
-    document.getElementById("foxBalance").innerHTML = fox;
-
-    document.getElementById("dollarBalance").innerHTML =
-    dollar.toFixed(2);
-
-}
-
-
-
-// Page Navigation
 
 function showPage(page){
 
-    let pages = document.querySelectorAll(".page");
 
-    pages.forEach(function(item){
-
-        item.classList.remove("active");
-
-    });
+let pages=document.querySelectorAll(".page");
 
 
-    document.getElementById(page)
-    .classList.add("active");
+pages.forEach(function(p){
+
+p.classList.remove("active");
+
+});
+
+
+document.getElementById(page).classList.add("active");
+
 
 }
-
-
-
-// Start
-
-updateBalance();
