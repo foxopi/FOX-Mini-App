@@ -1,38 +1,33 @@
-let fox = localStorage.getItem("fox") || 0;
+let coin = 0;
+let dollar = 0;
+
+let invite = 0;
 
 
-let dollar = localStorage.getItem("dollar") || 0;
+/* TAP COIN */
 
+function tapCoin(){
 
+    coin += 1;
 
-document.getElementById("foxBalance").innerHTML = fox;
+    updateBalance();
 
-document.getElementById("dollarBalance").innerHTML = dollar;
-
-
-document.getElementById("profileCoin").innerHTML = fox;
-
-
-
-function tapFox(){
-
-fox++;
-
-dollar = (fox/10000).toFixed(2);
+}
 
 
 
-localStorage.setItem("fox",fox);
+/* COIN TO DOLLAR */
 
-localStorage.setItem("dollar",dollar);
+function updateBalance(){
+
+    dollar = (coin / 100000) * 20;
 
 
+    document.getElementById("coinBalance").innerHTML = coin;
 
-document.getElementById("foxBalance").innerHTML = fox;
 
-document.getElementById("dollarBalance").innerHTML = dollar;
-
-document.getElementById("profileCoin").innerHTML = fox;
+    document.getElementById("dollarBalance").innerHTML =
+    "$" + dollar.toFixed(2);
 
 
 }
@@ -40,20 +35,122 @@ document.getElementById("profileCoin").innerHTML = fox;
 
 
 
-function showPage(page){
+
+/* PAGE CHANGE */
 
 
-let pages=document.querySelectorAll(".page");
+function openPage(page){
 
 
-pages.forEach(function(p){
-
-p.classList.remove("active");
-
-});
+    let pages = document.querySelectorAll(".page");
 
 
-document.getElementById(page).classList.add("active");
+    pages.forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+
+    document.getElementById(page)
+    .classList.add("active");
 
 
 }
+
+
+
+
+
+/* INVITE SYSTEM */
+
+
+function inviteFriend(){
+
+
+    if(invite < 10){
+
+        invite++;
+
+    }
+
+
+    let percent = invite * 10;
+
+
+    document.getElementById("progressBar")
+    .style.width = percent + "%";
+
+
+    document.getElementById("progressText")
+    .innerHTML = percent + "%";
+
+
+}
+
+
+
+
+
+
+/* RANK TIMER */
+
+
+let seconds = 60;
+let minutes = 60;
+let hours = 24;
+let days = 50;
+
+
+
+setInterval(function(){
+
+
+    seconds--;
+
+
+    if(seconds <=0){
+
+        seconds = 60;
+        minutes--;
+
+    }
+
+
+    if(minutes <=0){
+
+        minutes =60;
+        hours--;
+
+    }
+
+
+    if(hours <=0){
+
+        hours=24;
+        days--;
+
+    }
+
+
+
+    let timer =
+    days+" : "+
+    hours+" : "+
+    minutes+" : "+
+    seconds;
+
+
+
+    let timerBox=document.querySelector(".timer");
+
+
+    if(timerBox){
+
+        timerBox.innerHTML=timer;
+
+    }
+
+
+
+},1000);
